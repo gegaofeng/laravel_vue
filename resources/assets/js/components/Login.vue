@@ -33,7 +33,9 @@
                         email: app.email,
                         password: app.password
                     },
-                    success: function () {},
+                    success: function () {
+                        console.log('dengluchenggong');
+                    },
                     error: function () {},
                     rememberMe: true,
                     redirect: '/dashboard',
