@@ -40,4 +40,7 @@ Route::group([], function() {
     Route::post('articles', 'ArticleController@store');
     Route::put('articles/{article}', 'ArticleController@update');
     Route::delete('articles/{article}', 'ArticleController@delete');
+    //测试ResourceCollection
+    Route::get('comment','CommentController@index');
+    Route::get('comment/{comment}','CommentController@show');
 });

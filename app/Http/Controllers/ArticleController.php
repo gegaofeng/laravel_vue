@@ -11,6 +11,7 @@ class ArticleController extends Controller
     //
     public function index()
     {
+        return new ArticleResource(Article::all());
         return Article::all();
 //        return new ArticleResource(Article::all());
     }

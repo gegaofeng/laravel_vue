@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use function foo\func;
 use Illuminate\Http\Resources\Json\Resource;
 
 class ArticleResource extends Resource
@@ -18,6 +19,10 @@ class ArticleResource extends Resource
 //    }
     public function toArray($request)
     {
+//        $comments=$this->comments;
+//        foreach ($comments as $comment){
+//            $da=json_decode(new CommentResource($comment));
+//        }
         return [
             'type' => 'article',
             'id'   => (string)$this->id,
@@ -25,7 +30,8 @@ class ArticleResource extends Resource
                 'title' => $this->title,
                 'content' => $this->body,
             ],
-            'comments' => new ArticleCommentsResource($this->comments),
+//            'comments' =>json_encode($da)
+            'comments' => new CommentResource($this->comments),
         ];
     }
     public function with($request)

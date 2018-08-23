@@ -14,13 +14,14 @@ class ArticleCommentsResource extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
-//        return [
-//            'type'       => 'comment',
-//            'attributes' => [
-//                'user_id' => (string)$this->user_id,
-//                'content' => $this->content,
-//            ]
-//        ];
+//        return parent::toArray($request);
+        return [
+            'type'       => 'comment',
+            'attributes' => [
+//                'user_id' => (string)$this->id,
+                'content' => $this->content,
+//                'content' => $content,
+            ]
+        ];
     }
 }
